@@ -192,8 +192,56 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let result = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    const num = numberStr[i];
+    const gap = i !== numberStr.length - 1 ? ' ' : '';
+    switch (num) {
+      case '0':
+        result += `zero${gap}`;
+        break;
+      case '1':
+        result += `one${gap}`;
+        break;
+      case '2':
+        result += `two${gap}`;
+        break;
+      case '3':
+        result += `three${gap}`;
+        break;
+      case '4':
+        result += `four${gap}`;
+        break;
+      case '5':
+        result += `five${gap}`;
+        break;
+      case '6':
+        result += `six${gap}`;
+        break;
+      case '7':
+        result += `seven${gap}`;
+        break;
+      case '8':
+        result += `eight${gap}`;
+        break;
+      case '9':
+        result += `nine${gap}`;
+        break;
+      case ',':
+        result += `point${gap}`;
+        break;
+      case '.':
+        result += `point${gap}`;
+        break;
+      case '-':
+        result += `minus${gap}`;
+        break;
+      default:
+        result += '';
+    }
+  }
+  return result;
 }
 
 /**
@@ -208,8 +256,12 @@ function convertNumberToString(/* numberStr */) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  let reversStr = '';
+  for (let i = 0; i < str.length; i += 1) {
+    reversStr += str[str.length - 1 - i];
+  }
+  return str === reversStr;
 }
 
 /**
